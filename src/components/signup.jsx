@@ -36,6 +36,7 @@ export default function Signup() {
                 <SiGmail />
               </a>
             </div>
+
             <p class="mt-3">or use your email for registration</p>
             <form>
               <input
