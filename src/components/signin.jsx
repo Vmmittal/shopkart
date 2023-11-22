@@ -12,9 +12,7 @@ export default function Signin() {
         <div class="flex items-center justify-center content-center text-center  h-[600px] max-w-4xl rounded-xl">
           <div class=" bg-white basis-3/4  h-full rounded-l-xl">
             <div class=" bg-white basis-3/4  h-[400px] mt-[18%]">
-              <h1 class="font-bold text-4xl m-auto text-center  text-teal-600 (green) mt-12">
-                Sign in to ShopKart
-              </h1>
+               
               <div class=" flex first-letter:font-bold text-2xl  mt-5  justify-center">
                 <a href="/">
                   <MdOutlineFacebook />
