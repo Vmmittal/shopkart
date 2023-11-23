@@ -4,15 +4,27 @@ import { SiGmail } from "react-icons/si";
 import { FaUserSecret } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
-
+import { Navigate, useNavigate } from "react-router-dom";
+import { useCallback, useContext } from "react";
+import { context } from "react";
 export default function Signin() {
+  // const savedContext = useContext(context);
+  const navi = useNavigate();
+  const clickHandle = () => {
+    navi("/register");
+  };
+  const handleSignIn = () => {
+    navi("/");
+  };
   return (
     <div class="border-solid border-2 border-black h-screen bg-gradient-to-r from-teal-800 to-teal-100">
       <div class="bg-color : bg-teal-600 (green) max-w-4xl m-auto mt-8 rounded-xl shadow-lg shadow-teal-500/50">
         <div class="flex items-center justify-center content-center text-center  h-[600px] max-w-4xl rounded-xl">
           <div class=" bg-white basis-3/4  h-full rounded-l-xl">
             <div class=" bg-white basis-3/4  h-[400px] mt-[18%]">
-               
+              <h1 class="font-bold text-4xl m-auto text-center text-teal-600">
+                Sign in to Shopkart
+              </h1>
               <div class=" flex first-letter:font-bold text-2xl  mt-5  justify-center">
                 <a href="/">
                   <MdOutlineFacebook />
@@ -25,7 +37,7 @@ export default function Signin() {
                 </a>
               </div>
               <p class="mt-3">or use your email account</p>
-              <form>
+              <form onSubmit={clickHandle}>
                 <div class="flex bg-gray-200 max-w-[300px] m-auto mt-5">
                   <div class=" bg-gray-200 content-center justify-center mt-2.5 ml-2">
                     <FaUser class="text-s text-gray-600 " />
@@ -35,6 +47,7 @@ export default function Signin() {
                       type="text"
                       placeholder="username"
                       class=" px-16  py-2 rounded-lg bg-gray-200 focus:outline-none"
+                      required
                     />
                   </div>
                 </div>
@@ -47,6 +60,7 @@ export default function Signin() {
                       type="text"
                       placeholder="Password"
                       class=" px-16  py-2 rounded-lg bg-gray-200 focus:outline-none"
+                      required
                     />
                   </div>
                 </div>
@@ -54,7 +68,10 @@ export default function Signin() {
                   <p class="mt-4">Forgot your password ?</p>
                 </a>
                 {/* <br></br> */}
-                <button class="bg-teal-600 (green) px-16 rounded-full py-2 mt-4 text-white">
+                <button
+                  type="submit"
+                  class="bg-teal-600 (green) px-16 rounded-full py-2 mt-4 text-white"
+                >
                   SIGN IN
                 </button>
               </form>
@@ -68,7 +85,10 @@ export default function Signin() {
               <p class="m-auto text-center mt-8 text-white px-10">
                 Enter your personal details and start journey with us
               </p>
-              <button class="rounded-full  border-solid border-2 border-white  px-10 py-1 text-center text-white mt-8">
+              <button
+                onClick={() => handleSignIn()}
+                class="rounded-full  border-solid border-2 border-white  px-10 py-1 text-center text-white mt-8"
+              >
                 SIGN UP
               </button>
             </div>
